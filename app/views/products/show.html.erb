@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @product.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @product.avatar.url(:medium) %>
+</p>
+
+<% unless check_admin?  %>
+<td><%= link_to 'Add to cart', products_path %></td>
+<% end %>
+    
+
+<% if check_admin?  %>
+<%= link_to 'Edit', edit_product_path(@product) %> 
+<% end %>
+<%= link_to 'Back', products_path %>

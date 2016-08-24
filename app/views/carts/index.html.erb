@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cart Item</h1>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Price</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carts.each do |cart| %>
+      <tr>
+        <td><%= product_title(cart) %></td>
+        <td><%= product_description(cart) %></td>
+        <td><%= image_tag product_avatar(cart) %></td>
+        <td><%= product_price(cart) %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Checkout" ,'#'%>
