@@ -6,7 +6,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+  # debugger
+  # response.set_cookie "name", "nic"
+  # cookies[:user_name] = "david"
+  #  # cookies[:set_value] = { :value => 'a yummy cookie', :expires => 1.year.from_now,:domain => 'domain.com' }
+  #  cookies.signed[:tets_id]="hello i ma trying"
     @products = Product.all
+
   end
 
   # GET /products/1
